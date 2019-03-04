@@ -1,0 +1,26 @@
+<h3>Angular Http Client Post </h3>
+<p *ngIf="datasaved" ngClass="Success" >
+  Record saved Sucessfully
+</p>
+<form (ngSubmit)="onFormSubmit()" [formGroup]="commentForm" >
+<table>
+  <tr>
+      <td>BODY</td>
+      <td>
+          <input type="text"  formControlName="body">
+        </td>
+    </tr>
+    <tr>
+        <td>PostId</td>
+        <td>
+            <input type="text"  formControlName="PostId">
+          </td>
+      </tr>
+</table>
+</form>
+<table border=1>
+<tr><td>Id</td><td>Body</td><td>PostId</td></tr>
+<tr *ngFor="let comment of myComment">
+  <td>{{comment.id}}</td><td>{{comment.body}}</td><td>{{comment.PostId}}</td>
+</tr>
+</table>

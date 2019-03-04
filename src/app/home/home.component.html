@@ -1,0 +1,24 @@
+<h4>Add Post</h4>
+  <form (ngSubmit)="onSubmit()" [formGroup]="postForm">
+      <label>
+          Title:
+          <input type="text"  formControlName="title">
+      </label>
+<br><br>
+      <label>
+          Author:
+          <input type="text"  formControlName="author">
+      </label>
+      <br><br>
+      <button type='submit'>Add Book</button>
+  </form>
+<h4>View</h4>
+<table border = 1>
+  <tr>
+    <td>Id</td><td>Title</td><td>Author</td>
+  </tr>
+  <tr *ngFor="let post of posts;">
+    <td>{{post.id}}</td><td>{{post.title}}</td><td>{{post.author}}</td>
+    <td><button type='button' (click)='postToEdit'>Edit</button></td>
+  </tr>
+</table>
